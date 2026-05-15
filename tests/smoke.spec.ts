@@ -27,6 +27,23 @@ test("workbench exposes stock and process tabs", async ({ page }) => {
   await expect(page.getByRole("tab", { name: "Stok Cover Belakang" })).toBeVisible();
   await expect(page.getByRole("tab", { name: "Presentasi" })).toBeVisible();
   await expect(page.getByText("01-Sisipan-Presentasi-Halaman-Paling-Awal.pdf")).toBeVisible();
+  await expect(
+    page.getByText("Cover Depan-Belakang Maker: Workbench PDF Privat untuk Sisipan Cover"),
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: "Buka website Persiapantubel" })).toHaveAttribute(
+    "href",
+    "https://persiapantubel.com/",
+  );
+});
+
+test("app icon route serves a PNG favicon source", async ({ request }) => {
+  const iconResponse = await request.get("/icon.png");
+  const faviconResponse = await request.get("/favicon.ico");
+
+  expect(iconResponse.ok()).toBe(true);
+  expect(iconResponse.headers()["content-type"]).toContain("image/png");
+  expect(faviconResponse.ok()).toBe(true);
+  expect(faviconResponse.headers()["content-type"]).toContain("image/x-icon");
 });
 
 test("presentation flow downloads a processed PDF with the expected filename", async ({

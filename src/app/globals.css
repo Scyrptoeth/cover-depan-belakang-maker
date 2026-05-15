@@ -464,6 +464,85 @@ code {
   color: var(--muted);
 }
 
+.site-footer {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  width: min(1180px, 100%);
+  margin: 32px auto 0;
+  padding: 32px 16px 8px;
+  border-top: 1px solid var(--line);
+  color: #6b655d;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.footer-brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.footer-made {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+.footer-heart {
+  color: #ef4444;
+  fill: #ef4444;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-links a {
+  display: inline-flex;
+  max-width: 100%;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  color: #6b655d;
+  font-weight: 700;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.footer-links a span {
+  overflow-wrap: anywhere;
+}
+
+.footer-links a:hover {
+  color: var(--teal-dark);
+}
+
+.footer-links a:first-child svg {
+  color: #73706b;
+}
+
+.footer-links a:last-child svg {
+  color: #13c760;
+}
+
+.footer-copy {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
